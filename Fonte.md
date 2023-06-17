@@ -4,7 +4,7 @@ Desenvolver uma fonte capaz de transformar a corrente alternada da tensão médi
 
 ## Tabela dos componentes:
 | Componentes | Quantidade | Valor R$ |
-|-------------|------------|----------|
+|-------------|  :---:  |----------|
 | Conjunto de 65 jumpers para a Protoboard | 1 | 16,44 |
 | Capacitor Eletrolítico 35V               | 3 | 2,55 |
 | Diodo 1N4004                             | 8 | 1,20 |
@@ -15,7 +15,11 @@ Desenvolver uma fonte capaz de transformar a corrente alternada da tensão médi
 | Transistor NPN-BC548                     | 3 | 0,90 |
 | | Total: | 27,40 |
 
-Obs: Há componentes que foram comprados a mais por segurança.
+Obs1: Há componentes que foram comprados a mais por segurança.
+
+Obs2: O led, a protoboard e o transformador foram emprestados a nós.
+
+## 
 
 ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/fc247f40-ff31-4527-99b2-dd3b5b6fd9e1)
 
@@ -23,6 +27,6 @@ Obs: Há componentes que foram comprados a mais por segurança.
 
 ### Alunos:
 * Bruno Basckeira Chinaglia
-* Didrick Chancel Egnina Ndombi,
-* Giordano Santorum Lorenzetto,
-* Victor Moreli dos Santos.
+* Didrick Chancel Egnina Ndombi
+* Giordano Santorum Lorenzetto
+* Victor Moreli dos Santos
