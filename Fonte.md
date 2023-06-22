@@ -21,7 +21,8 @@ Obs2: O led, a protoboard e o transformador foram emprestados a nós.
 
 ## 
 
-![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/fc247f40-ff31-4527-99b2-dd3b5b6fd9e1)
+![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/bad9ab8d-ef4f-4bab-afd2-d9558ef4734c)
+
 
 
 
