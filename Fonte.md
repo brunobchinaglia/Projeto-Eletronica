@@ -33,6 +33,12 @@ Obs: A protoboard e o transformador (razão 7.1) foram emprestados a nós.
 ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/e89c270b-dd9d-48f9-abe5-2941765fd302)
 link da fonte: https://tinyurl.com/23leylth
 
+## Professor Simões medindo a fonte na Protoboard
+![krxxtddj](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/507c9743-61b4-45ac-a99a-6a84604367b4)
+
+
+
+
 ## Vídeo no YouTube
 
 ## Cálculo do capacitor
