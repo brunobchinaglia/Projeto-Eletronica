@@ -1,7 +1,7 @@
 # Projeto Braço Robótico com Três Articulações
 
 ## Apresentação
-
+  Esse projeto é um braço articulado controlado por um sensor de flexão e um potenciômetro. As articulações são servo motores.
 
 ## Código do Programa
 ```INO
