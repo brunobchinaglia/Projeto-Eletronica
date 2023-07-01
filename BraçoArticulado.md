@@ -58,19 +58,30 @@ void loop() {
   // Lendo valor do potenciômetro
   value_pot = analogRead(potPin);
 
+
+  // Verificação de máximo e mínimo com o objetivo de proteger o servo motor de giros inválidos
+  if(value_flex > value_flex_max){
+    value_flex = value_flex_max;
+  }
+
+  if(value_flex < value_flex_min){
+    value_flex = value_flex_min;
+  }
+
   // Alterando as posições dos servos motores 1 e 2 com o sensor de flexão
-  pos_1 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
-  pos_2 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
-  s.write(pos_1);
-  s.write(pos_2);
+  pos1 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
+  pos2 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
+  s1.write(pos1);
+  s2.write(pos2);
 
   // Alterando a posição do servo motor 3 (da base) com o potenciômetro
-  pos_3 = map(value_pot, value_pot_min, value_pot_max, 0, 360);
-  s.write(pos_3);
+  pos3 = map(value_pot, value_pot_min, value_pot_max, 0, 180);
+  s3.write(pos3);
   
   delay(100);
 
 }
+
 ```
 
 ### Medição dos valores:
@@ -83,6 +94,16 @@ void loop() {
   * Potenciômetro:
   
 ![WhatsApp Image 2023-07-01 at 15 48 08](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/ce55bca2-a3ec-4cbd-acb3-b71f7f0f17d1)
+
+## Circuito para retirar sinal de sensor resistivo
+
+  Tanto o sensor de flexão quanto o potenciômetro foram utilizados como sensores resistivos na seguinte configuração:
+
+  ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/89356201/b35cab5b-58a2-4cfc-9042-47e8e9c21bda)
+
+  O R é um resistor fixo que é calculado para gerar o maior range possível dentro das condições dos sensores.
+  Foi escolhido um resistor de 200Ohms para acompanhar o potenciômetro e um de 33kOhms para acompanhar o sensor de flexão.
+  
 
 ## Código de Medição de valores
 ```INO
