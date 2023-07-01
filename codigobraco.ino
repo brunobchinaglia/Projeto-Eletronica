@@ -1,6 +1,6 @@
 // Esse programa define valores de máximo e mínimo obitos por meio do sensor de flexão e do potenciômetro.
 // Essa informação é importante para controlar os servos motores do braço articulado.
-// Autores: Bruno Basckeira Chinaglia, Giordano Santorum Lorenzetto, Victor Moreli dos Santos
+// Autores: Bruno Basckeira Chinaglia, Didrick Chancel Egnina Ndombi, Giordano Santorum Lorenzetto, Victor Moreli dos Santos
 // Data: 2023
 
 
