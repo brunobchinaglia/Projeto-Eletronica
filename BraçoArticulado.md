@@ -14,6 +14,11 @@
   
 ![WhatsApp Image 2023-07-01 at 15 48 08](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/ce55bca2-a3ec-4cbd-acb3-b71f7f0f17d1)
 
+## Imagem do processo de construção
+![essa](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/72832283-ee4b-4a3f-aa52-edd4d09aecaf)
+
+
+
 ## Código do Programa
 ```INO
 // Esse programa define valores de máximo e mínimo obitos por meio do sensor de flexão e do potenciômetro.
