@@ -3,6 +3,17 @@
 ## Apresentação
   Esse projeto é um braço articulado controlado por um sensor de flexão e um potenciômetro. As articulações são servo motores.
 
+## Medição dos valores:
+  Máximos e mínimos registrados para colocar no programa
+  
+  * Sensor resistivo de flexão:
+  
+![WhatsApp Image 2023-07-01 at 15 44 47](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/076b9289-c320-4b6a-bdae-03a9af4d935c)
+
+  * Potenciômetro:
+  
+![WhatsApp Image 2023-07-01 at 15 48 08](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/ce55bca2-a3ec-4cbd-acb3-b71f7f0f17d1)
+
 ## Código do Programa
 ```INO
 // Esse programa define valores de máximo e mínimo obitos por meio do sensor de flexão e do potenciômetro.
