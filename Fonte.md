@@ -49,6 +49,13 @@ Os demais resistores foram decididos empiricamente por meio do simulador Falstad
   É importante notar que os valores de alguns resistores foram alterados seguindo medições feitas na prática. O resistor de 2k2 Ohms foi substitudo por dois resistores de 1k Ohms em série pegos no lab, para se adequar melhor aos valores de tensão que devem ser disponibilizados pela fonte.
 Link da fonte: https://tinyurl.com/23abu5a5
 
+## Esquemático da fonte
+![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/129186535/a5292c87-7d33-444d-a904-8b300dbed69c)
+## PCB da fonte
+![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/129186535/d0978a1f-b648-433c-9da4-a37cec547c0d)
+
+
+
 ## Professor Simões medindo a fonte na Protoboard
 ![krxxtddj](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/507c9743-61b4-45ac-a99a-6a84604367b4)
 
