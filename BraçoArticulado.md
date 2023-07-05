@@ -97,20 +97,22 @@ void loop() {
 
 ## Circuito para retirar sinal de sensor resistivo
 
-  Tanto o sensor de flexão quanto o potenciômetro foram utilizados como sensores resistivos na seguinte configuração:
-
-  ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/89356201/b35cab5b-58a2-4cfc-9042-47e8e9c21bda)
-
-  O R é um resistor fixo que é calculado para gerar o maior range possível dentro das condições dos sensores. O maior range é cálculado pela diferença entre o sinal de tensão máxima e mínima em função do Rx (variável):
+  Tanto o sensor de flexão quanto o potenciômetro foram utilizados como sensores resistivos. O R é um resistor fixo que é calculado para gerar o maior range possível dentro das condições dos sensores. O maior range é cálculado pela diferença entre o sinal de tensão máxima e mínima em função do Rx (variável):
 
   ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/89356201/ec7d5fde-eb90-4cfe-a880-2448456db769)
 
   
   Foi utilizado o software geogebra para encontrar o máximo do range. Foi escolhido um resistor de 200Ohms para acompanhar o potenciômetro e um de 33kOhms para acompanhar o sensor de flexão.
-  Exemplo do geogebra para o potenciômetro:
+  Print das funções e do resultado no geogebra:
 
-
+  
   ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/89356201/1b29995c-26df-4c02-8865-0bdf6ab8b2ee)
+  Potenciômetro.
+
+
+  
+  ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/89356201/5efbb678-d5c9-4bdb-b29a-842301cc898b)
+  Sensor de flexão.
 
   
 
