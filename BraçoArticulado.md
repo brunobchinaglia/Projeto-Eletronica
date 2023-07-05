@@ -2,6 +2,22 @@
 
 ## Apresentação
   Esse projeto é um braço articulado controlado por um sensor de flexão e um potenciômetro. As articulações são servo motores.
+  
+https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/3338a261-644b-4c6e-9645-561d482f7916
+
+À esquerda do vídeo, está o sensor de flexão e, à direita, está o potenciômetro.
+
+### Sobre o protótipo
+* **Material**:
+  
+  Foram utilizados três servo motores, sendo: um na base para fazer a rotação do eixo principal do braço, rotacionando-o todo à direita ou à esquerda, alèm disso, os dois restantes, serviram como articulações do membro robótico, possibilitando o deslocamento vertical dele. Ademais, papelão, protoboard, peças de plástico e a dobradura da mão, foram usufruídos como suporte e/ou decoração do projeto.
+* **Sensores**:
+  
+  Para o controle do movimento vertical, foi usado um sensor de flexão, que varia a resistência ao ser dobrado, com ele, analisamos os intervalos de ddp máximos e mínimos oferecidos e colocamos na função "map" da biblioteca "servo.h" para conseguirmos controlar os dois servos motores das articulações.
+  Para o controle radial do eixo principal, reutilizamos o potenciômetro da fonte de tensão, porém tivemos que realizar a nossa própria função map, pois, devido ao fato da escala do potenciômetro estar em exponenciação, tivemos que utilizar logaritmo e trabalhar com números decimais (que não são suportados na função "map" citada anteriormente).
+* **Código**:
+  
+  A placa escolhida foi a do Arduíno, portanto, o código foi feito nessa linguagem (que basicamente é C).
 
 ## Código do Pograma
 ```INO
