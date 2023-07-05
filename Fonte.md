@@ -53,7 +53,8 @@ Link da fonte: https://tinyurl.com/23abu5a5
 ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/129186535/a5292c87-7d33-444d-a904-8b300dbed69c)
 ## PCB da fonte
 ![image](https://github.com/brunobchinaglia/Projeto-Eletronica/assets/129186535/d0978a1f-b648-433c-9da4-a37cec547c0d)
-
+## Pasta do projeto do EAGLE
+[Fonte.zip](https://github.com/brunobchinaglia/Projeto-Eletronica/files/11952782/Fonte.zip)
 
 
 ## Professor Simões medindo a fonte na Protoboard
