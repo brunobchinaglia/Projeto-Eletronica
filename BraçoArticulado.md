@@ -28,6 +28,7 @@ https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/3338a261-
 // Data: 2023
 
 #include <Servo.h>
+#include <math.h>
 
 // Definindo pinos de entrada analógica para o flex sensor e para o potenciômetro
 #define flexPin A0
@@ -41,11 +42,15 @@ https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/3338a261-
 // Definindo valores máximos e mínimos do sensor flexor e do potenciometro
 #define value_flex_min 250
 #define value_flex_max 650
-#define value_pot_min 1014
-#define value_pot_max 41
+#define value_pot_min 41
+#define value_pot_max 1014
 
 // Variaveis de valor do flex sensor e do potenciometro
 int value_flex, value_pot;
+int servo1vet[10] = {90, 90, 90, 90, 90, 90, 90, 90, 90, 90};
+int servo2vet[10];
+
+int tmp1 = 90, tmp2 = 90, tmp3 = 90, cont = 0;
 
 // Variaveis dos servos motores
 Servo s1, s2, s3;
@@ -59,9 +64,9 @@ void setup() {
   s3.attach(servo3Pin);
 
   // Setando a posição dos servo motores para 0
-  s1.write(0);
-  s2.write(0);
-  s3.write(0);
+  s1.write(90);
+  s2.write(90);
+  s3.write(90);
 
   Serial.begin(9600);
 }
@@ -85,19 +90,32 @@ void loop() {
   }
 
   // Alterando as posições dos servos motores 1 e 2 com o sensor de flexão
-  pos1 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
-  pos2 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
+
+  pos1 = (int) (map(value_flex, value_flex_min, value_flex_max, 10, 100)/5) * 5;
   s1.write(pos1);
+  
+  pos2 = (int) (map(value_flex, value_flex_min, value_flex_max, 10, 100)/5) * 5;
   s2.write(pos2);
 
+  
+  pos3 = (int) ((50 * log(value_pot)  - 180)/10) * 10 + 10;
+
   // Alterando a posição do servo motor 3 (da base) com o potenciômetro
-  pos3 = map(value_pot, value_pot_min, value_pot_max, 0, 180);
-  s3.write(pos3);
+
+  if(abs(pos3 - tmp3) > 20){
+    s3.write(tmp3);
+    Serial.print(" tmp posicao 3: ");
+    Serial.println(tmp3);
+  } else {
+    s3.write(pos3);
+    Serial.print(" pos posicao 3: ");
+    Serial.println(pos3);
+    tmp3 = pos3;
+  }
   
   delay(100);
 
 }
-
 ```
 
 ### Medição dos valores:
