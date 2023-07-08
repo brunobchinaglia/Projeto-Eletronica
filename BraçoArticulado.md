@@ -142,7 +142,8 @@ void loop() {
   s3.write(pos3);
   delay(100);
 
-}```
+}
+```
 
 ### Medição dos valores:
   Máximos e mínimos registrados para colocar no programa
