@@ -28,6 +28,7 @@ https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/3338a261-
 // Data: 2023
 
 #include <Servo.h>
+#include <math.h>
 
 // Definindo pinos de entrada analógica para o flex sensor e para o potenciômetro
 #define flexPin A0
@@ -41,15 +42,18 @@ https://github.com/brunobchinaglia/Projeto-Eletronica/assets/124844938/3338a261-
 // Definindo valores máximos e mínimos do sensor flexor e do potenciometro
 #define value_flex_min 250
 #define value_flex_max 650
-#define value_pot_min 1014
-#define value_pot_max 41
+#define value_pot_min 41
+#define value_pot_max 1014
 
 // Variaveis de valor do flex sensor e do potenciometro
 int value_flex, value_pot;
 
 // Variaveis dos servos motores
 Servo s1, s2, s3;
-int pos1, pos2, pos3;
+int pos1, pos3;
+int count = 0, maior, menor, soma,
+    posicoes[20] = {90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90}, ]
+    posicoes3[20] = {90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90,90};
 
 void setup() {
 
@@ -58,10 +62,10 @@ void setup() {
   s2.attach(servo2Pin);
   s3.attach(servo3Pin);
 
-  // Setando a posição dos servo motores para 0
-  s1.write(0);
-  s2.write(0);
-  s3.write(0);
+  // Setando a posição dos servo motores para 90
+  s1.write(90);
+  s2.write(90);
+  s3.write(90);
 
   Serial.begin(9600);
 }
@@ -69,36 +73,76 @@ void setup() {
 void loop() {
 
   // Lendo valor do sensor de flexão
-  value_flex = analogRead(flexPin);
+  value_flex = 0;
+  for(int i = 0; i < 5; i++)
+    value_flex += analogRead(flexPin);
+  value_flex /= 5;
 
   // Lendo valor do potenciômetro
-  value_pot = analogRead(potPin);
-
+  value_pot = 0;
+  for(int i = 0; i < 5; i++)
+    value_pot += analogRead(potPin);
+  value_pot /= 5;
 
   // Verificação de máximo e mínimo com o objetivo de proteger o servo motor de giros inválidos
   if(value_flex > value_flex_max){
     value_flex = value_flex_max;
   }
-
+  
   if(value_flex < value_flex_min){
     value_flex = value_flex_min;
   }
 
   // Alterando as posições dos servos motores 1 e 2 com o sensor de flexão
-  pos1 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
-  pos2 = map(value_flex, value_flex_min, value_flex_max, 0, 90);
-  s1.write(pos1);
-  s2.write(pos2);
+  // Para o calculo da posição é feita uma média de 18 das ultimas 20 posições
+  // eliminando o maior valor e o menor valor, a fim de filtrar ruídos e obter um valor estável
+  pos1 = (int) (map(value_flex, value_flex_min, value_flex_max, 10, 100));
+  posicoes[count++] = pos1;
+  if(count == 20) count = 0;
+  maior = 0;
+  menor = 0;
+  soma = 0;
+  for(int i = 1; i < 20; i++){
+    if(posicoes[i] > posicoes[maior]){
+      maior = i;
+    }
+    if(posicoes[i] < posicoes[menor])
+      menor = i;
+    soma += posicoes[i];
+  }
+  soma -= posicoes[maior];
+  soma -= posicoes[menor];
+  pos1 = soma/18;
 
-  // Alterando a posição do servo motor 3 (da base) com o potenciômetro
-  pos3 = map(value_pot, value_pot_min, value_pot_max, 0, 180);
-  s3.write(pos3);
+  // a posição dos servos motores 1 e 2 será a mesma
+  s1.write(pos1);
+  s2.write(pos1);
+
   
+  // Alterando a posição do servo motor 3 (da base) com o potenciômetro
+  // A mesma filtragem foi feita para o cálculo da posição deste servo motor
+  pos3 = (int) ((50 * log(value_pot)  - 180)/10) * 10 + 10;
+  posicoes3[count++] = pos3;
+  if(count == 20) count = 0;
+  maior = 0;
+  menor = 0;
+  soma = 0;
+  for(int i = 1; i < 20; i++){
+    if(posicoes3[i] > posicoes3[maior]){
+      maior = i;
+    }
+    if(posicoes3[i] < posicoes3[menor])
+      menor = i;
+    soma += posicoes3[i];
+  }
+  soma -= posicoes3[maior];
+  soma -= posicoes3[menor];
+  pos3 = soma/18;
+
+  s3.write(pos3);
   delay(100);
 
-}
-
-```
+}```
 
 ### Medição dos valores:
   Máximos e mínimos registrados para colocar no programa
